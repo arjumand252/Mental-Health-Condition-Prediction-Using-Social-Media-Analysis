@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #cfb3e9, #dcfafb);
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            padding: 25px 30px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            text-align: center;
+            animation: fadeInContainer 1s ease-in-out;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeInText 1.2s ease-in-out 0.5s forwards;
+        }
+        .text-secondary {
+            font-size: 1.1em;
+            color: #6c757d;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInText 1.2s ease-in-out 0.7s forwards;
+        }
+        .analysis-results {
+            padding: 18px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f1f3f5;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #495057;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease-in-out 0.9s forwards;
+            transition: all 0.3s;
+        }
+        .analysis-results:hover {
+            background-color: #e9ecef;
+            transform: scale(1.02);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .note-box {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            font-size: 0.9em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease-in-out 1.2s forwards;
+        }
+        .note-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        /* Animations */
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Analysis</h1>
+        <p class="text-secondary">Based on our analysis, you are likely to have the following mental health condition(s):</p>
+        <div class="analysis-results" id="results">
+            <!-- Data from backend will be displayed here -->
+        </div>
+        <div class="note-box">
+            <p><strong>Note:</strong> Please consult a medical professional for further clarity.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Placeholder for connecting to backend and displaying data
+        document.getElementById("results").innerText = "Bipolar, Depression,PTSD" ;
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
