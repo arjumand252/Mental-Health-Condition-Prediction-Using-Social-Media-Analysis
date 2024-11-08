@@ -9,3 +9,4 @@ class SurveyForm(forms.ModelForm):
             'datetime': forms.DateTimeInput(attrs={'readonly': 'readonly'}),
             # Customize widgets as needed
         }
+        
