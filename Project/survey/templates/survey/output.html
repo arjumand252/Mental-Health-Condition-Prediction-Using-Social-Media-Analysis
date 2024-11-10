@@ -113,10 +113,11 @@
         <div class="analysis-results" id="results">
             <!-- The result will be rendered here from the Django backend -->
             {% if prediction %}
-                <script>
+                <!-- <script>
                     // Display the prediction directly passed from the backend
                     document.getElementById("results").innerText = "{{ prediction }}";
-                </script>
+                </script> -->
+                <p>{{ prediction }}</p>
             {% else %}
                 <p>No prediction available at this time.</p>
             {% endif %}

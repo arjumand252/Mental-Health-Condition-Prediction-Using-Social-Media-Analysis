@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mansi',  # The name of your database
+        'NAME': 'itproject',  # The name of your database
         'USER': 'postgres',     # Your MySQL username
         'PASSWORD': 'Aastha',  # Your MySQL password
         'HOST': 'localhost',  # Set to your MySQL server host (use 'localhost' for local development)
