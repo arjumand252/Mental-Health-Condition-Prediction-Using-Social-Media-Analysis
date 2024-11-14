@@ -3,9 +3,9 @@ databases:
     plan: free
     databaseName: itproject
     user: postgres
-    password: Aastha          # Password for the 'postgres' user
-    host: your-database-name.onrender.com  # Replace with Render's database hostname (provided by Render)
-    port: 5432
+    # password: Aastha          # Password for the 'postgres' user
+    # host: your-database-name.onrender.com  # Replace with Render's database hostname (provided by Render)
+    # port: 5432
 
 services:
   - type: web
@@ -17,7 +17,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysitedb
+          name: itproject
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
