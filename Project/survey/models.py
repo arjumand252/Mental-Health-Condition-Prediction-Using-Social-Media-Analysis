@@ -33,55 +33,55 @@ loaded_models = {
 
 def adhd_pred(input_data):
     ae = loaded_models["autoencoder"]["adhd"].predict(input_data)
-    ae = (ae>0.1).astype(int)
+    ae = (ae>0.25).astype(int)
     fc = loaded_models["fcnn"]["adhd"].predict(input_data)
-    fc = (fc>0.1).astype(int)
+    fc = (fc>0.25).astype(int)
     rn = loaded_models["resnet"]["adhd"].predict(input_data)
-    rn = (rn>0.4).astype(int)
+    rn = (rn>0.25).astype(int)
     predictions_adhd = np.vstack([ae, fc, rn])
     final_predictions_adhd = mode(predictions_adhd, axis=1).mode.flatten()
     return final_predictions_adhd
 
 def anxiety_pred(input_data):
     ae = loaded_models["autoencoder"]["anxiety"].predict(input_data)
-    ae = (ae>0.1).astype(int)
+    ae = (ae>0.25).astype(int)
     fc = loaded_models["fcnn"]["anxiety"].predict(input_data)
-    fc = (fc>0.1).astype(int)
+    fc = (fc>0.25).astype(int)
     rn = loaded_models["resnet"]["anxiety"].predict(input_data)
-    rn = (rn>0.4).astype(int)
+    rn = (rn>0.25).astype(int)
     predictions_anxiety = np.vstack([ae, fc, rn])
     final_predictions_anxiety = mode(predictions_anxiety, axis=1).mode.flatten()
     return final_predictions_anxiety
 
 def ptsd_pred(input_data):
     ae = loaded_models["autoencoder"]["ptsd"].predict(input_data)
-    ae = (ae>0.1).astype(int)
+    ae = (ae>0.25).astype(int)
     fc = loaded_models["fcnn"]["ptsd"].predict(input_data)
-    fc = (fc>0.1).astype(int)
+    fc = (fc>0.25).astype(int)
     rn = loaded_models["resnet"]["ptsd"].predict(input_data)
-    rn = (rn>0.4).astype(int)
+    rn = (rn>0.25).astype(int)
     predictions_ptsd = np.vstack([ae, fc, rn])
     final_predictions_ptsd = mode(predictions_ptsd, axis=1).mode.flatten()
     return final_predictions_ptsd
 
 def bipolar_pred(input_data):
     ae = loaded_models["autoencoder"]["bipolar"].predict(input_data)
-    ae = (ae>0.1).astype(int)
+    ae = (ae>0.25).astype(int)
     fc = loaded_models["fcnn"]["bipolar"].predict(input_data)
-    fc = (fc>0.1).astype(int)
+    fc = (fc>0.25).astype(int)
     rn = loaded_models["resnet"]["bipolar"].predict(input_data)
-    rn = (rn>0.4).astype(int)
+    rn = (rn>0.25).astype(int)
     predictions_bipolar = np.vstack([ae, fc, rn])
     final_predictions_bipolar = mode(predictions_bipolar, axis=1).mode.flatten()
     return final_predictions_bipolar
 
 def depression_pred(input_data):
     ae = loaded_models["autoencoder"]["depression"].predict(input_data)
-    ae = (ae>0.1).astype(int)
+    ae = (ae>0.25).astype(int)
     fc = loaded_models["fcnn"]["depression"].predict(input_data)
-    fc = (fc>0.1).astype(int)
+    fc = (fc>0.25).astype(int)
     rn = loaded_models["resnet"]["depression"].predict(input_data)
-    rn = (rn>0.4).astype(int)
+    rn = (rn>0.25).astype(int)
     predictions_depression = np.vstack([ae, fc, rn])
     final_predictions_depression = mode(predictions_depression, axis=1).mode.flatten()
     return final_predictions_depression
