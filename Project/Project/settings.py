@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-94i=rj9c$j!1gf8$^z8^i&sd&d(k2j6@b*6z&49onaq8#fbp(5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -125,9 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'  # Add a forward slash before "static"
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
+# ]
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
