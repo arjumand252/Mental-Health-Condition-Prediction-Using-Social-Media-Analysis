@@ -13,7 +13,7 @@ services:
     name: itproject
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn Project.project.asgi:application -k uvicorn.workers.UvicornWorker"
+    startCommand: "python -m gunicorn project.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
