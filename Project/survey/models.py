@@ -7,59 +7,37 @@ import numpy as np
 from scipy.stats import mode
 
 
-# Get the base directory of the project
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Set the base directory dynamically
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Now set the relative path to your model directory
+MODEL_DIR = os.path.join(BASE_DIR, 'models')
 
-# Define model paths relative to the base directory
-model_paths = {
-    "autoencoder": {
-        "adhd": os.path.join(BASE_DIR, 'models', 'auto_enc_adhd.h5'),
-        "anxiety": os.path.join(BASE_DIR, 'models', 'auto_enc_anxiety.h5'),
-        "ptsd": os.path.join(BASE_DIR, 'models', 'auto_enc_ptsd.h5'),
-        "bipolar": os.path.join(BASE_DIR, 'models', 'auto_enc_bipolar.h5'),
-        "depression": os.path.join(BASE_DIR, 'models', 'auto_enc_depression.h5')
-    },
-    "fcnn": {
-        "adhd": os.path.join(BASE_DIR, 'models', 'fcnn_adhd.h5'),
-        "anxiety": os.path.join(BASE_DIR, 'models', 'fcnn_anxiety.h5'),
-        "ptsd": os.path.join(BASE_DIR, 'models', 'fcnn_ptsd.h5'),
-        "bipolar": os.path.join(BASE_DIR, 'models', 'fcnn_bipolar.h5'),
-        "depression": os.path.join(BASE_DIR, 'models', 'fcnn_depression.h5')
-    },
-    "resnet": {
-        "adhd": os.path.join(BASE_DIR, 'models', 'resnet_adhd.h5'),
-        "anxiety": os.path.join(BASE_DIR, 'models', 'resnet_anxiety.h5'),
-        "ptsd": os.path.join(BASE_DIR, 'models', 'resnet_ptsd.h5'),
-        "bipolar": os.path.join(BASE_DIR, 'models', 'resnet_bipolar.h5'),
-        "depression": os.path.join(BASE_DIR, 'models', 'resnet_depression.h5')
-    }
-}
-
-# Loading models from the relative paths
+# Dictionary to hold models by type and condition
 loaded_models = {
     "autoencoder": {
-        "adhd": tf.keras.models.load_model(model_paths["autoencoder"]["adhd"]),
-        "anxiety": tf.keras.models.load_model(model_paths["autoencoder"]["anxiety"]),
-        "ptsd": tf.keras.models.load_model(model_paths["autoencoder"]["ptsd"]),
-        "bipolar": tf.keras.models.load_model(model_paths["autoencoder"]["bipolar"]),
-        "depression": tf.keras.models.load_model(model_paths["autoencoder"]["depression"])
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_depression.h5'))
     },
     "fcnn": {
-        "adhd": tf.keras.models.load_model(model_paths["fcnn"]["adhd"]),
-        "anxiety": tf.keras.models.load_model(model_paths["fcnn"]["anxiety"]),
-        "ptsd": tf.keras.models.load_model(model_paths["fcnn"]["ptsd"]),
-        "bipolar": tf.keras.models.load_model(model_paths["fcnn"]["bipolar"]),
-        "depression": tf.keras.models.load_model(model_paths["fcnn"]["depression"])
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_depression.h5'))
     },
     "resnet": {
-        "adhd": tf.keras.models.load_model(model_paths["resnet"]["adhd"]),
-        "anxiety": tf.keras.models.load_model(model_paths["resnet"]["anxiety"]),
-        "ptsd": tf.keras.models.load_model(model_paths["resnet"]["ptsd"]),
-        "bipolar": tf.keras.models.load_model(model_paths["resnet"]["bipolar"]),
-        "depression": tf.keras.models.load_model(model_paths["resnet"]["depression"])
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_depression.h5'))
     }
 }
+
 
 def adhd_pred(input_data):
     ae = loaded_models["autoencoder"]["adhd"].predict(input_data)
