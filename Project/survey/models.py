@@ -11,7 +11,7 @@ from scipy.stats import mode
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Now set the relative path to your model directory
-MODEL_DIR = os.path.abspath(BASE_DIR, 'src') 
+MODEL_DIR = os.path.join(BASE_DIR, 'src') 
 
 # Dictionary to hold models by type and condition
 loaded_models = {
