@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'survey'
 ]
+BASE_DIR = Path(__file__).resolve().parent
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
