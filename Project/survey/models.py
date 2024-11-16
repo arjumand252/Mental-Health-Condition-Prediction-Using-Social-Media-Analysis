@@ -9,25 +9,25 @@ from scipy.stats import mode
 # Dictionary to hold models by type and condition
 loaded_models = {
     "autoencoder": {
-        "adhd": tf.keras.models.load_model('\auto_enc_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('\auto_enc_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('\auto_enc_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('\auto_enc_bipolar.h5'),
-        "depression": tf.keras.models.load_model('\auto_enc_depression.h5')
+        "adhd": tf.keras.models.load_model('/auto_enc_adhd.h5'),
+        "anxiety": tf.keras.models.load_model('/auto_enc_anxiety.h5'),
+        "ptsd": tf.keras.models.load_model('/auto_enc_ptsd.h5'),
+        "bipolar": tf.keras.models.load_model('/auto_enc_bipolar.h5'),
+        "depression": tf.keras.models.load_model('/auto_enc_depression.h5')
     },
     "fcnn": {
-        "adhd": tf.keras.models.load_model('\fcnn_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('\fcnn_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('\fcnn_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('\fcnn_bipolar.h5'),
-        "depression": tf.keras.models.load_model('\fcnn_depression.h5')
+        "adhd": tf.keras.models.load_model('/fcnn_adhd.h5'),
+        "anxiety": tf.keras.models.load_model('/fcnn_anxiety.h5'),
+        "ptsd": tf.keras.models.load_model('/fcnn_ptsd.h5'),
+        "bipolar": tf.keras.models.load_model('/fcnn_bipolar.h5'),
+        "depression": tf.keras.models.load_model('/fcnn_depression.h5')
     },
     "resnet": {
-        "adhd": tf.keras.models.load_model('\resnet_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('\resnet_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('\resnet_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('\resnet_bipolar.h5'),
-        "depression": tf.keras.models.load_model('\resnet_depression.h5')
+        "adhd": tf.keras.models.load_model('/resnet_adhd.h5'),
+        "anxiety": tf.keras.models.load_model('/resnet_anxiety.h5'),
+        "ptsd": tf.keras.models.load_model('/resnet_ptsd.h5'),
+        "bipolar": tf.keras.models.load_model('/resnet_bipolar.h5'),
+        "depression": tf.keras.models.load_model('/resnet_depression.h5')
     }
 }
 
