@@ -7,11 +7,8 @@ import numpy as np
 from scipy.stats import mode
 
 
-# Set the base directory dynamically
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 # Now set the relative path to your model directory
-MODEL_DIR = BASE_DIR 
+MODEL_DIR = '/opt/render/project/src/'
 
 # Dictionary to hold models by type and condition
 loaded_models = {
