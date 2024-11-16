@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'survey',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'survey'
 ]
+BASE_DIR = Path(__file__).resolve().parent
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
