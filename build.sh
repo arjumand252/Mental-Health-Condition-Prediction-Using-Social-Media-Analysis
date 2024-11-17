@@ -9,7 +9,7 @@ pip install -r requirements.txt
 cd Project
 
 # Update the app by creating survey if it's missing
-python manage.py startapp survey
+#python manage.py startapp survey
 
 pip freeze
 
