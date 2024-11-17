@@ -22,5 +22,4 @@ python manage.py collectstatic --no-input
 # Apply any outstanding database migrations
 python manage.py migrate
 
-# Now start the Gunicorn server with Uvicorn worker (add this line at the end)
-python -m gunicorn Project.asgi:application -k uvicorn.workers.UvicornWorker
+
