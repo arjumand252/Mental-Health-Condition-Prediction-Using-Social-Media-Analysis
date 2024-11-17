@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'survey'
+    'Project/survey'
 ]
 BASE_DIR = Path(__file__).resolve().parent
 
