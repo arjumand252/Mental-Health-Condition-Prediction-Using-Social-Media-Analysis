@@ -2,9 +2,6 @@
 # Exit on error
 set -o errexit
 
-#creating project
-django-admin startproject Project
-
 # Navigate to the 'Project' folder where manage.py is located
 cd Project
 
