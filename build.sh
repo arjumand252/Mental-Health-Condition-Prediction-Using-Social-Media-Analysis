@@ -22,4 +22,4 @@ python manage.py collectstatic --no-input
 # Apply any outstanding database migrations
 python manage.py migrate
 
-
+python -m gunicorn Project.asgi:application -k uvicorn.workers.UvicornWorke
